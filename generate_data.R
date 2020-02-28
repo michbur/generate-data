@@ -1,7 +1,7 @@
 set.seed(15390)
 
 generate_df <- function(n_row) {
-  n_class <- round(n_row/5, 0)
+  n_class <- runif(1, min = 3, max = 8)
   class_names <- sapply(1L:n_class, function(i)
     paste0(sample(c(letters, LETTERS), size = rpois(1, 3.5) + 1, replace = TRUE), collapse = ""))
   data.frame(x = runif(n = n_row, min = -10, max = 100),
